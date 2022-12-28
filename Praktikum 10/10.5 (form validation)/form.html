@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <script> 
+        function validasi() {
+        let Isian_nama = document.getElementById("nama").value;
+        let p = document.getElementById("nama");
+
+        let Isian_email = document.getElementById("email").value;
+        let p1 = document.getElementById("email1");
+
+        let Isian_jam = document.getElementById("jam").value;
+        let p2 = document.getElementById("jam1");
+
+        let Isian_tujuan = document.getElementById("tujuan").value;
+        let p3 = document.getElementById("tujuan1");
+
+        let isian_tiket = document.getElementById("tiket").value;
+        let p4 = document.getElementById("tiket1");
+
+        if(isian_nama == "") {
+        p.innerHTML = <p> + "Nama tidak valid." + </p>;
+        isian_nama.focus();
+        }else if(isian_nama.length > 30) {
+        p.innerHTML = <p> + "Maksimum 30 karakter." + </p>;
+        }else{
+        p.innerHTML = <p></p>;
+        }
+
+        if(isian_email == "") {
+        p1.innerHTML = <p> + "Email wajib diisi." + </p>
+        }else if(isian_email.length <= 9 || isian_email == "@gmail.com") {
+        p1.innerHTML = <p> + "Email tidak valid." + </p>
+        }else{
+        p1.innerHTML = <p></p>;
+        }
+
+        if(Isian_jam == "") {
+            p2.innerHTML = <p> + "Jam Keberangkatan wajib diisi." + </p>
+        }else{
+            p2.innerHTML = <p></p>
+        }
+
+        if(Isian_tujuan == ""){
+        p3.innerHTML = <p> + "Tujuan keberangkatan wajib diisi." + </p>
+        } else{
+        p3.innerHTML = <p></p>
+        }
+        if(isian_tiket == "" || isian_tiket <= 0) {
+            p4.innerHTML= <p> + "Pembelian tiket minimal 1 tiket dan maximal 10 tiket." + </p>
+        }else if(isian_tiket > 10){
+        p4.innerHTML = <p> + "Maximum 10 tiket." + </p>
+        }else{
+            p4.innerHTML = <p></p>
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1 class="home">Welcome to Validation Form</h1>
+    <hr>
+    <br>
+    <div class="container">
+        <form action="#">
+        <div class="form">
+            <div class="flex">
+                <label class="label" for="nama">Nama Pelanggan</label> <p id="nama"></p>
+            </div>
+            <input type="text" class="form-control" placeholder="Nama Pelanggan" id="nama">
+        </div>
+        <br>
+
+        <div class="form-control">
+            <div class="flex">
+                <label class="label" for="email">Email</label><p id="email1"></p>
+            </div>
+            <input type="text" class="form-control" placeholder="Email" id="email1">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <div class="flex">
+                <label class="label" for="jam">Jam Keberangkatan</label><p id="jam1"></p>
+            </div>
+            <input type="time" class="form-control" placeholder="Jam Keberangkatan" id="jam1">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <div class="flex">
+                <label class="label" for="tujuan" >Tujuan Keberangkatan</label><p id="tujuan1"></p>
+            </div>
+            <input type="text" class="form-control" placeholder="Tujuan Keberangkatan" id="tujuan1">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <div class="flex">
+                <label for="tiket" class="">Jumlah Tiket</label><p id="tiket1"></p>
+            </div>
+            <input type="number" class="form-control" placeholder="Jumlah Tiket" id="tiket">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <input onclick="validasi()" type="submit" value="Pesan Sekarang" class="success">
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

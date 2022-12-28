@@ -1,0 +1,28 @@
+.container-fluid {
+    background-color: antiquewhite;
+}
+.tengah {
+    background-color: rgb(9, 240, 240);
+}
+.navbar {
+    background-color: rgb(6, 233, 233);
+}
+.row-ataas {
+    background-color: rgb(73, 248, 73);
+}
+.alert { 
+    background-color: rgb(73, 248, 73);
+}
+
+.row-tengah {
+    background-color: rgb(131, 131, 238);
+}
+.card {
+    background-color: rgb(95, 95, 241);
+}
+.row-baawah {
+    background-color: rgb(95, 95, 241);
+}
+.row-bawah {
+    background-color: rgb(6, 233, 233);
+}
